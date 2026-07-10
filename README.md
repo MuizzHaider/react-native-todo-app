@@ -1,56 +1,65 @@
-# Welcome to your Expo app 👋
+# React Native Todo App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A full-stack, cross-platform Todo application built with React Native and Expo. This project demonstrates modern mobile development practices including file-based routing, global state management, and local data persistence.
 
-## Get started
+## 🚀 Features
 
-1. Install dependencies
+- **Authentication Flow:** Secure login and signup mock screens with session persistence.
+- **Task Management:** Full CRUD operations (Create, Read, Update, Delete) for your tasks.
+- **Dynamic Routing:** Built with Expo Router for seamless file-based navigation.
+- **State Management:** Utilizes React's Context API to manage global Authentication and Todo state.
+- **Local Storage:** Leverages `AsyncStorage` to persist tasks and user sessions across app reloads.
+- **Modern UI:** Sleek, dark-mode inspired interface with custom components.
 
-   ```bash
-   npm install
-   ```
+## 🛠️ Tech Stack
 
-2. Start the app
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/) (SDK 51+)
+- [Expo Router](https://docs.expo.dev/router/introduction/)
+- [AsyncStorage](https://react-native-async-storage.github.io/async-storage/)
+- [Date-Fns](https://date-fns.org/)
 
-   ```bash
-   npx expo start
-   ```
+## 📂 Project Structure
 
-In the output, you'll find options to open the app in a
+This project follows a clean architectural pattern:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+src/
+├── app/                  # File-based routing (Expo Router)
+│   ├── (auth)/           # Public routes (Login, Signup)
+│   ├── (app)/            # Protected routes (Dashboard, Create, Details, Profile)
+│   └── _layout.tsx       # Root layout acting as an Authentication Guard
+├── components/           # Reusable UI components (TodoCard)
+└── context/              # Global State Management
+    ├── AuthContext.tsx   # Manages user session
+    └── TodoContext.tsx   # Manages task data
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 💻 Getting Started
 
-### Other setup steps
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Installation
 
-## Learn more
+1. Clone the repository
+```bash
+git clone https://github.com/MuizzHaider/react-native-todo-app.git
+cd react-native-todo-app
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+2. Install dependencies
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+3. Start the development server
+```bash
+npm run web
+```
+*(You can also use `npx expo start` to run it on an iOS/Android simulator or scan the QR code with the Expo Go app).*
 
-## Join the community
+## 👨‍💻 Author
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Built by Muizz Haider as a React Internship Project.
