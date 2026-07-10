@@ -22,8 +22,10 @@ export default function Dashboard() {
           <Text style={styles.greeting}>Hello,</Text>
           <Text style={styles.email}>{user?.email}</Text>
         </View>
-        <TouchableOpacity style={styles.logoutBtn} onPress={logout}>
-          <Text style={styles.logoutText}>Log Out</Text>
+              <TouchableOpacity style={{ backgroundColor: '#3B82F6', padding: 8, borderRadius: 8 }}
+                  onPress={() => router.push('/(app)/profile')}
+              >
+                  <Text style={{ color: '#FFF' }}>Profile</Text>
         </TouchableOpacity>
       </View>
 
@@ -75,8 +77,8 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
   },
   greeting: {
-    fontSize: 16,
-    color: '#94A3B8',
+    fontSize: 26,
+    color: '#00FFFF',
   },
   email: {
     fontSize: 20,
@@ -85,9 +87,9 @@ const styles = StyleSheet.create({
   },
   logoutBtn: {
     backgroundColor: '#EF4444',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 8,
+    paddingHorizontal: 26,
+    paddingVertical: 16,
+    borderRadius: 16,
   },
   logoutText: {
     color: '#FFF',
@@ -129,11 +131,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#3B82F6',
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#3B82F6',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.4,
-    shadowRadius: 8,
-    elevation: 5,
+    boxShadow: '0px 4px 8px rgba(59, 130, 246, 0.4)',
   },
   fabText: {
     color: '#FFF',
