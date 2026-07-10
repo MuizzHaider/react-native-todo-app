@@ -12,7 +12,7 @@ export default function LoginScreen() {
       Alert.alert('Error', 'Please enter an email address');
       return;
     }
-    // Simulate login 
+
     await login(email);
   };
 
@@ -62,7 +62,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0F172A', // Sleek dark slate
+    backgroundColor: '#0F172A',
     justifyContent: 'center',
     padding: 24,
   },
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     borderColor: '#334155',
   },
   button: {
-    backgroundColor: '#3B82F6', // Vibrant blue
+    backgroundColor: '#3B82F6',
     borderRadius: 12,
     padding: 16,
     alignItems: 'center',

@@ -16,7 +16,7 @@ export default function Dashboard() {
 
   return (
     <View style={styles.container}>
-      {/* Header */}
+
       <View style={styles.header}>
         <View>
           <Text style={styles.greeting}>Hello,</Text>
@@ -27,7 +27,7 @@ export default function Dashboard() {
         </TouchableOpacity>
       </View>
 
-      {/* Todo List */}
+
       {todos.length === 0 ? (
         <View style={styles.emptyContainer}>
           <Text style={styles.emptyIcon}>📝</Text>
@@ -50,7 +50,7 @@ export default function Dashboard() {
         />
       )}
 
-      {/* Floating Action Button */}
+
       <TouchableOpacity 
         style={styles.fab} 
         onPress={() => router.push('/(app)/todo/create')}

@@ -13,7 +13,7 @@ export default function SignupScreen() {
       Alert.alert('Error', 'Please enter a valid email address');
       return;
     }
-    // Simulate signup by just logging them in with the new email
+
     await login(email);
   };
 

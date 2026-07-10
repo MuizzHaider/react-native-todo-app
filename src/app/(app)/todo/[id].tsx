@@ -70,11 +70,11 @@ export default function TodoDetailsScreen() {
     );
   };
 
-  // ---------- VIEW MODE ----------
+
   if (!isEditing) {
     return (
       <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-        {/* Status Badge */}
+
         <View style={[styles.badge, todo.completed ? styles.badgeCompleted : styles.badgePending]}>
           <Text style={styles.badgeText}>{todo.completed ? '✓ Completed' : '● Pending'}</Text>
         </View>
@@ -93,7 +93,7 @@ export default function TodoDetailsScreen() {
           </Text>
         </View>
 
-        {/* Action Buttons */}
+
         <TouchableOpacity style={styles.editButton} onPress={() => setIsEditing(true)}>
           <Text style={styles.editButtonText}>✏️  Edit Task</Text>
         </TouchableOpacity>
@@ -105,7 +105,7 @@ export default function TodoDetailsScreen() {
     );
   }
 
-  // ---------- EDIT MODE ----------
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.editHeading}>Edit Task</Text>
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     marginTop: 48,
   },
 
-  // View Mode Styles
+
   badge: {
     alignSelf: 'flex-start',
     paddingHorizontal: 12,
@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 
-  // Edit Mode Styles
+
   editHeading: {
     fontSize: 24,
     fontWeight: 'bold',

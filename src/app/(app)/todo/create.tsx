@@ -20,7 +20,7 @@ export default function CreateTodoScreen() {
       return;
     }
 
-    // Parse the date (expects YYYY-MM-DD format)
+
     const parsedDate = new Date(dueDate);
     if (isNaN(parsedDate.getTime())) {
       Alert.alert('Error', 'Please enter a valid date in YYYY-MM-DD format (e.g. 2026-07-15)');

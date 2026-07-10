@@ -2,17 +2,15 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuth } from './AuthContext';
 
-// 1. Define what a single Todo looks like
 export type Todo = {
   id: string;
   title: string;
   description: string;
-  dueDate: string; // Stored as ISO string
+  dueDate: string;
   completed: boolean;
-  userId: string;  // We tie each todo to a specific user
+  userId: string;
 };
 
-// 2. Define the Context structure for Todos
 type TodoContextType = {
   todos: Todo[];
   addTodo: (title: string, description: string, dueDate: string) => Promise<void>;
@@ -25,13 +23,12 @@ const TodoContext = createContext<TodoContextType | undefined>(undefined);
 
 export function TodoProvider({ children }: { children: React.ReactNode }) {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const { user } = useAuth(); // We need the user so we only load THEIR todos!
+  const { user } = useAuth();
 
-  // Load todos whenever the logged-in user changes
   useEffect(() => {
     const loadTodos = async () => {
       if (!user) {
-        setTodos([]); // If no user, clear the list
+        setTodos([]);
         return;
       }
       try {
@@ -48,7 +45,6 @@ export function TodoProvider({ children }: { children: React.ReactNode }) {
     loadTodos();
   }, [user]);
 
-  // Helper to save todos whenever they change
   const saveTodos = async (newTodos: Todo[]) => {
     if (!user) return;
     setTodos(newTodos);
