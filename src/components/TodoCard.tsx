@@ -42,11 +42,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginBottom: 12,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 3,
+    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
   },
   cardCompleted: {
     opacity: 0.7,
